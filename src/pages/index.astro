@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import { TEAM } from '../data/team';
+import { url, SEQUENTIA } from '../site';
+---
+
+<Base
+  title="Concatena Labs: a free and open-source Bitcoin development studio"
+  description="Concatena Labs, Inc. is a free and open-source Bitcoin development studio focused on building Sequentia, a Bitcoin sidechain for asset tokenization and disintermediated exchanges."
+>
+  <Header slot="header" />
+
+  <section class="wrap studio" aria-label="Concatena Labs">
+    <h1>
+      <b>Concatena Labs</b>, Inc. is a free and open-source Bitcoin development studio focused on building
+      <a href={SEQUENTIA}>Sequentia</a>.
+    </h1>
+    <img src={url('img/sequentia-artwork.png')} alt="Sequentia" width="768" height="768" />
+  </section>
+
+  <section class="section wrap" aria-labelledby="team-title">
+    <h2 class="team-title" id="team-title">Our team</h2>
+    <div class="team">
+      {
+        TEAM.map((m) => (
+          <article class="member">
+            <a class="photo" href={m.link.href} aria-label={`${m.name} on ${m.link.label}`}>
+              <img src={url(m.photo)} alt="" width="162" height="162" loading="lazy" />
+            </a>
+            <h3>
+              <a href={m.link.href}>{m.name}</a>
+            </h3>
+            <p class="role">{m.role}</p>
+            <div class="bio">
+              {m.bio.map((p) => (
+                <p>{p}</p>
+              ))}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</Base>

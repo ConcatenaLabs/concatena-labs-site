@@ -1,0 +1,40 @@
+---
+import '@fontsource-variable/montserrat';
+import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import { PREVIEW, url } from '../site';
+
+interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+}
+const { title, description, icon = 'favicon.png' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {PREVIEW && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href={url(icon)} />
+    <meta name="theme-color" content="#0d0d0d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <slot name="header" />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

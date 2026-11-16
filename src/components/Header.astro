@@ -1,0 +1,23 @@
+---
+import { url, SEQUENTIA, TESTNET } from '../site';
+const projects = [
+  { href: url('ambra/'), label: 'Ambra wallet' },
+  { href: SEQUENTIA, label: 'Sequentia' },
+  { href: `${TESTNET}/explorer/`, label: 'Block explorer' },
+  { href: `${TESTNET}/faucet`, label: 'Testnet faucet' },
+];
+---
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href={url()} aria-label="Concatena Labs, home">
+      <img src={url('img/concatena-labs-wordmark.png')} alt="Concatena Labs" width="153" height="20" />
+    </a>
+    <details class="menu always">
+      <summary>Projects</summary>
+      <div class="panel">
+        {projects.map((p) => <a href={p.href}>{p.label}</a>)}
+      </div>
+    </details>
+  </div>
+</header>
