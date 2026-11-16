@@ -58,9 +58,9 @@ Link it from the Projects menu (`src/components/Header.astro`) or the footer if 
 
 ## Writing
 
-Write in the present tense about what is true now, in plain words. Ambra's download link goes to
-the public testnet download page (`AMBRA_DOWNLOAD` in `src/site.ts`), which always offers the
-current release. The workflow refuses em and en dashes anywhere under `src/` and in this file. The network is
+Write in the present tense about what is true now, in plain words. Ambra's download button fetches
+the APK itself, `ambra-latest.apk` on the testnet's download server (`AMBRA_DOWNLOAD` in
+`src/site.ts`), a name the release publisher points at each new version. The workflow refuses em and en dashes anywhere under `src/` and in this file. The network is
 Sequentia; its token is the Sequence token (SEQ), named that way on first mention.
 
 ## Publish
