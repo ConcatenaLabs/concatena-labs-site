@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import { url } from '../site';
+---
+
+<Base title="Page not found: Concatena Labs" description="This page does not exist on concatenalabs.com.">
+  <Header slot="header" />
+  <section class="wrap lost">
+    <span class="kicker">404</span>
+    <h1>Page not found</h1>
+    <p>This address has no page.</p>
+    <div class="actions">
+      <a class="btn primary" href={url()}>Home</a>
+      <a class="btn ghost" href={url('ambra/')}>Ambra wallet</a>
+    </div>
+  </section>
+</Base>
