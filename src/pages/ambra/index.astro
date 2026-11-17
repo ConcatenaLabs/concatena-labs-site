@@ -4,29 +4,26 @@ import { url, AMBRA_DOWNLOAD, TESTNET, TELEGRAM, SEQUENTIA } from '../../site';
 
 const nav = [
   { href: url(), label: 'Concatena Labs' },
-  { href: AMBRA_DOWNLOAD, label: 'Download for Android' },
+  { href: AMBRA_DOWNLOAD, label: 'Download APK' },
   { href: `${TESTNET}/faucet`, label: 'Faucet' },
   { href: url('ambra/#features'), label: 'Features' },
   { href: url('ambra/#stay-in-touch'), label: 'Stay in touch' },
 ];
 
 const chips = [
-  'Create or import a recovery phrase',
-  'Send and receive BTC',
+  'Import/Create Bitcoin seed',
+  'Connect your own full-node',
   'Send and receive any Sequentia asset',
-  'Pay fees in any accepted asset',
-  'Opt-in confidential address',
-  'Lock with fingerprint or PIN',
-  'Connect your own node',
+  'Send and receive BTC',
 ];
 
 const steps = [
-  { img: 'img/ambra/step-select-asset.jpg', title: 'Select the asset', text: 'Choose an asset from your wallet.' },
-  { img: 'img/ambra/step-transfer.jpg', title: 'Transfer your asset', text: "Tap Send and set the amount to transfer." },
+  { img: 'img/ambra/step-select-asset.jpg', title: 'Select the asset', text: 'Choose an asset from your wallet dashboard.' },
+  { img: 'img/ambra/step-transfer.jpg', title: 'Transfer your asset', text: "Click 'Send' and set the amount to transfer." },
   {
     img: 'img/ambra/step-fee-asset.jpg',
-    title: 'Choose the fee asset',
-    text: 'Ambra pays the fee in the asset you are sending whenever block producers accept it. Pick any other accepted asset if you prefer.',
+    title: 'Choose the Fee asset',
+    text: 'Propose the same asset you are transferring as the transaction fee.',
   },
   {
     img: 'img/ambra/step-bump-fee.jpg',
@@ -61,22 +58,21 @@ const steps = [
   <section class="wrap ambra-hero" aria-labelledby="ambra-title">
     <img class="phone" src={url('img/ambra/phone-send.png')} alt="" width="567" height="567" />
     <div class="copy">
-      <h1 id="ambra-title">Bitcoin and <span>Sequentia wallet.</span></h1>
-      <p>Ambra is a self-custodial, open-source wallet for your bitcoin and your tokenized assets on Sequentia.</p>
-      <p>Ambra for Android runs on Bitcoin testnet4 and the Sequentia testnet, where coins and assets have no value.</p>
-      <a class="btn primary" href={AMBRA_DOWNLOAD}>Download for Android <span class="arrow" aria-hidden="true">&#8594;</span></a>
+      <h1 id="ambra-title">Bitcoin and <span>Sequentia Wallet.</span></h1>
+      <p>Ambra is a self-custodial and open-source wallet for your Bitcoin and tokenized assets on Sequentia.</p>
+      <p>Download the latest build for Android devices running on Bitcoin Testnet and Sequentia Testnet.</p>
+      <a class="btn primary" href={AMBRA_DOWNLOAD}>Download APK <span class="arrow" aria-hidden="true">&#8594;</span></a>
     </div>
     <img class="phone" src={url('img/ambra/phone-balance.png')} alt="" width="567" height="567" />
   </section>
 
   <section class="section wrap" id="features" aria-labelledby="features-title">
-    <h2 class="light-head" id="features-title">Pay transaction fees <span>using any asset in</span> your wallet</h2>
+    <h2 class="light-head" id="features-title">Pay transaction fees <span>using any asset in</span> your wallet!</h2>
     <div class="cards3">
       <article class="dark-card">
         <img src={url('img/ambra/recovery-phrase.png')} alt="" width="640" height="400" loading="lazy" />
-        <h3>One recovery phrase</h3>
-        <p>One 12-word phrase holds your bitcoin and your Sequentia assets, and one address receives both. Create a
-          new phrase or import the one you have.</p>
+        <h3>One Bitcoin seed phrase</h3>
+        <p>To store both Bitcoin and Sequentia assets simply import a Bitcoin seed phrase or create a new one.</p>
       </article>
       <article class="dark-card">
         <img src={url('img/ambra/bump-fee.png')} alt="" width="640" height="400" loading="lazy" />
@@ -104,7 +100,7 @@ const steps = [
   </section>
 
   <section class="section wrap" aria-labelledby="fees-title">
-    <h2 class="light-head" id="fees-title">Pay the fee <span>in the asset</span> you send</h2>
+    <h2 class="light-head" id="fees-title">The smarter <span>way to manage your assets</span> and save on transaction fees!</h2>
     <ol class="steps">
       {
         steps.map((s) => (
@@ -119,24 +115,24 @@ const steps = [
   </section>
 
   <section class="section wrap cta-center" aria-labelledby="explorer-title">
-    <p class="small">Follow every transaction</p>
-    <h2 class="light-head" id="explorer-title">Check Sequentia and Bitcoin transactions <span>on the block explorers</span></h2>
+    <p class="small">Navigate through transactions.</p>
+    <h2 class="light-head" id="explorer-title">Check Sequentia and Bitcoin transactions <span>on the Block explorers</span></h2>
     <div class="actions">
-      <a class="btn ghost" href={`${TESTNET}/explorer/`}>Sequentia block explorer</a>
-      <a class="btn ghost" href={`${TESTNET}/testnet4/`}>Bitcoin testnet4 explorer</a>
+      <a class="btn ghost" href={`${TESTNET}/explorer/`}>Sequentia Block Explorer</a>
+      <a class="btn ghost" href={`${TESTNET}/testnet4/`}>Bitcoin Block Explorer</a>
     </div>
   </section>
 
   <section class="section wrap duo" id="stay-in-touch" aria-label="Stay in touch">
     <article class="dark-card">
-      <h2>Don’t miss a thing</h2>
-      <p>Join the Sequentia Telegram channel for updates and news about Ambra.</p>
+      <h2>Don’t miss a thing!</h2>
+      <p>Join our Telegram channel, Sequentia, for exclusive updates and news about Ambra Wallet features!</p>
       <a class="btn primary" href={TELEGRAM}>Join Telegram</a>
     </article>
     <article class="dark-card">
-      <h2>Learn more about Sequentia</h2>
-      <p>Sequentia is a Bitcoin sidechain for asset tokenization and disintermediated exchanges, and the network
-        Ambra holds your assets on.</p>
+      <h2>Learn more about Sequentia.</h2>
+      <p>A Bitcoin sidechain protocol powering Ambra Wallet. Designed for seamless financial asset management and
+        real-world asset tokenization.</p>
       <a class="btn ghost" href={SEQUENTIA}>
         <img src={url('img/sequentia-mark.png')} alt="" width="18" height="18" style="width:1.1rem;height:1.1rem" />
         sequentia.io
